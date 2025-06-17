@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "0295ffa5-ea2a-4500-af93-7dc7a3892c54",
+		"name": "KUDO Movie API",
+		"description": "_**Usuarios**_  \nPOST `/api/users`  \nCrea un nuevo usuario registrando su nombre y correo electrónico.\n\n_**Películas**_  \nPOST `/api/movies`  \nCrea una nueva película asociada a una categoría específica.\n\nGET `/api/movies`  \nObtiene el listado de películas registradas. Parámetros:  \n\\- `page` | `number`: Número de página que se desea consultar. Por defecto es 1.  \n\\- `limit`|`number`: Cantidad de registros por página. Por defecto es 10.  \n\\- `title`|`string`: Texto para filtrar películas por nombre que lo contenga.  \n\\- `order`| `string`. Orden de las películas por fecha de estreno: `asc` o `desc`. Por defecto: `desc`.  \n\\- `categoryId`|`number`: ID de la categoría para filtrar películas por categoría específica.\n\n_**Novedades**_  \nGET `/api/movies/novedades`  \nObtiene las películas consideradas como novedades. (Una película es novedad si fue estrenada hace menos de 3 semanas)\n\n_**Marcar como vista**_  \nPUT `/api/movies/vista`  \nMarca una película como vista por un usuario. Evita duplicados si ya fue marcada previamente.\n\n_**Películas vistas**_  \nGET `/api/movies/peliculas-vistas`  \nObtiene el listado de usuarios junto con las películas que han visto y la fecha en que las vieron.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29576366"
+	},
+	"item": [
+		{
+			"name": "api/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"admin\",\r\n    \"email\": \"julieth.h27@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Titanic\",\r\n    \"description\": \"Película romántica que narra la historia de amor entre Jack Dawson, un artista pobre, y Rose DeWitt Bukater, una joven de clase alta, a bordo del transatlántico RMS Titanic\",\r\n    \"releaseDate\": \"1998-02-13\",\r\n    \"categoryId\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/movie",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movie",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/movie?page=1&limit=5&title=dark&categoryId=2&order=desc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "title",
+							"value": "dark"
+						},
+						{
+							"key": "categoryId",
+							"value": "2"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movie/novedades",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/movie/novedades",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie",
+						"novedades"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movie/novedades/vista",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"movieId\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/movie/vista",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie",
+						"vista"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/movie/peliculas-vistas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/movie/peliculas-vistas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"movie",
+						"peliculas-vistas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:4000",
+			"type": "default"
+		}
+	]
+}

@@ -1,0 +1,26 @@
+CUESTIONARIO
+1. ¿Cuál es el propósito de "module.exports"?
+	Tiene como propósito exportar funciones, objetos o variables desde un archivo para que puedan ser usados en otros módulos dentro de la aplicación. Tiene la palabra reservada 'exports' para lograrlo.
+
+2. ¿Qué es un middleware?
+	En Node.js, un middleware es una función que actúa como intermediario entre la solicitud y su destino final. Se ejecuta antes de que la petición llegue a la ruta y tiene acceso tanto al objeto de la solicitud como al de la respuesta. Se usa para convertir datos, manejar errores o validar autenticaciones.
+ 
+3. ¿Cual es la diferencia entre código bloqueante y código no bloqueante?
+	Código bloqueante: Detiene la ejecución de la aplicación hasta que se complete una tarea.
+	Código no bloqueante: Permite que la aplicación se siga ejecutando mientras se espera el resultado de una tarea. Esto es típico en operaciones asincrónicas como async/await o el uso de promesas.
+
+4. ¿Qué biblioteca de javascript usaría para manejar datos en tiempo real?
+	Yo usaría Socket.IO ya que permite establecer comunicación en tiempo real entre el servidor y el cliente sin necesidad de actualizar sin recargar la página. Es muy útil para funcionalidades como chats o notificaciones. Personalmente, lo usé en un proyecto personal  donde construí un chat y me permitió enviar y recibir mensajes al instante. El proyecto está disponible en mi GitHub: https://github.com/Julyeth-17/chat-project
+	
+PLUS
+5. ¿Cuál es la principal ventaja de trabajar un proyecto dockerizado?
+	Aunque no he trabajado directamente con Docker, estuve investigando y vi que lo más útil es que te asegura que el proyecto funcione igual sin importar el equipo o sistema donde se ejecute. Evita errores por configuraciones distintas entre entornos y hace mucho más fácil desplegarlo.
+
+6. ¿Cual es la diferencia entre una imagen y un volumen en Docker?
+	Según lo que leí, una imagen es como el molde del contenedor e incluye todo lo que necesita para funcionar. En cambio, un volumen es donde se guardan los datos, y lo bueno es que no se pierden aunque el contenedor se borre. En otras palabras, la imagen es lo que corre, y el volumen es donde se guarda lo que genera.
+
+7. ¿Con qué herramienta se puede orquestar un proyecto con múltiples imágenes en docker?
+	Para eso se usa Docker Compose. Te permite levantar varios contenedores juntos (como backend, frontend y base de datos) usando solo un archivo de configuración. 
+
+8. ¿Cual es la principal ventaja de trabajar con cluster de kubernetes?
+	Nunca he usado Kubernetes, sin embargo, leí y entiendo que sirve para manejar muchos contenedores al mismo tiempo, en varios servidores.

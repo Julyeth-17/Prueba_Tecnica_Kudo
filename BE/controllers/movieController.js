@@ -33,8 +33,6 @@ exports.GetMovies = async (req, res) => {
 
     const offset = (page - 1) * limit;
 
-    await pool.request()
-
     try {
         const pool = await dbConnect();
 

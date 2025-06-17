@@ -205,7 +205,7 @@
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://localhost:4000",
+			"value": "https://kudo-api-julyeth-hoyos-c155829a7ff8.herokuapp.com",
 			"type": "default"
 		}
 	]

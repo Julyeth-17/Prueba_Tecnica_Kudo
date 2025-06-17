@@ -1,13 +1,28 @@
-Prueba Técnica - API Kudo
-Leidy Julyeth Hoyos
+Kudo API:
+API REST creada como parte de una prueba técnica. Permite registrar usuarios, agregar películas, clasificarlas por categorías y marcar cuáles ya fueron vistas.
 
-URL: https://kudo-api-julyeth-hoyos-c155829a7ff8.herokuapp.com/
+✅ Enlace del proyecto : https://kudo-api-julyeth-hoyos-c155829a7ff8.herokuapp.com/
+
+✅ Tecnologías utilizadas
+
+- Node.js + Express
+- SQL Server (Azure)
+- Heroku (deploy)
+- Postman (documentación)
 
 ✅ Rutas importantes:
-- GET /api/movies
 - GET /api/users
-- GET /api/news
+- GET /api/movies
+- GET /api/movies/novedades
+- GET /api/movies/vista
+- GET /api/movies/peliculas-vistas
 - POST /api/users (Crear usuario)
 - POST /api/movies (Crear película)
 
-📝 Documentación POSTMAN: https://zap-bs.postman.co/workspace/Personal-Workspace~0c92e7fa-6a94-449c-b35a-2e63381d872b/collection/29576366-0295ffa5-ea2a-4500-af93-7dc7a3892c54?action=share&creator=29576366
+✅ En este repositorio encontrarás además:
+- script.sql: script para crear la base de datos y sus tablas.
+- modelo-relacional.png: imagen del modelo relacional.
+- postman_collection.json: colección con todos los endpoints para probar en Postman.
+- cuestionario.txt: archivo con las respuestas al cuestionario técnico.
+
+Leidy Julyeth Hoyos Velasco

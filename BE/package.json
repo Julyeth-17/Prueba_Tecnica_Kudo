@@ -4,6 +4,7 @@
   "description": "PRUEBA TECNICA KUDO",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon ."
   },
   "author": "LEIDY JULYETH HOYOS",

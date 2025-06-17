@@ -5,6 +5,16 @@ const app = express();
 dbConnect();
 
 app.use(express.json())
+app.get('/', (req, res) => {
+    res.json({
+        message: 'API de Kudo',
+        endpoints: {
+            usuarios: '/api/user',
+            peliculas: '/api/movie'
+        }
+    });
+});
+
 app.use('/api/user', require('./routes/user'));
 app.use('/api/movie', require('./routes/movie'))
 

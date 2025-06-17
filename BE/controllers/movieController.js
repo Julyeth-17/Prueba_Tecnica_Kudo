@@ -33,6 +33,8 @@ exports.GetMovies = async (req, res) => {
 
     const offset = (page - 1) * limit;
 
+    const sortOrder = typeof sort === 'string' && sort.toLowerCase() === 'asc' ? 'ASC' : 'DESC';
+
     try {
         const pool = await dbConnect();
 
@@ -51,13 +53,20 @@ exports.GetMovies = async (req, res) => {
             query += ` AND m.CategoryId = @CategoryId`;
         }
 
-        query += ` ORDER BY m.ReleaseDate ${sort === 'asc' ? 'ASC' : 'DESC'} OFFSET @Offset ROWS FETCH NEXT @Limit ROWS ONLY`;
+        query += ` ORDER BY m.ReleaseDate ${sortOrder}
+        OFFSET @Offset ROWS FETCH NEXT @Limit ROWS ONLY`;
 
         const request = pool.request()
-            .input('Name', sql.NVarChar, `%${name || ''}%`)
-            .input('CategoryId', sql.Int, categoryId || 0)
             .input('Offset', sql.Int, offset)
             .input('Limit', sql.Int, parseInt(limit));
+
+        if (name) {
+            request.input('Name', sql.NVarChar, `%${name}%`);
+        }
+
+        if (categoryId && parseInt(categoryId) > 0) {
+            request.input('CategoryId', sql.Int, parseInt(categoryId));
+        }
 
         const result = await request.query(query);
 

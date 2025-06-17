@@ -1,0 +1,19 @@
+{
+  "name": "peliculas-api",
+  "version": "1.0.0",
+  "description": "PRUEBA TECNICA KUDO",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "author": "LEIDY JULYETH HOYOS",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mssql": "^11.0.1"
+  }
+}

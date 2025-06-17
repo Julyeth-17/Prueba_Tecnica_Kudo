@@ -19,7 +19,7 @@ API REST creada como parte de una prueba técnica. Permite registrar usuarios, a
 - POST /api/users (Crear usuario)
 - POST /api/movies (Crear película)
 
-✅ En este repositorio encontrarás además:
+✅ En este repositorio encontrarás adicionalmente una carpeta documentacion con:
 - script.sql: script para crear la base de datos y sus tablas.
 - modelo-relacional.png: imagen del modelo relacional.
 - postman_collection.json: colección con todos los endpoints para probar en Postman.
